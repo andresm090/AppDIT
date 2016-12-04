@@ -23,7 +23,8 @@ import java.util.Date;
 
 
 /**
- * Created by leandro on 02/06/16.
+ * Clase que se enncarga del manejo de los eventos de Geofencing y de enviar
+ * la información correspondiente a la Web.
  */
 public class Servicio extends IntentService{
 
@@ -37,6 +38,10 @@ public class Servicio extends IntentService{
     }
 
 
+    /**
+     * Metodo encargado del manejo de los eventos de Geofencing
+     * @param intent
+    */
     @Override
     protected void onHandleIntent(Intent intent) {
 
@@ -65,7 +70,10 @@ public class Servicio extends IntentService{
 
     }
 
-
+    /**
+     * Metodo encargado de enviar la información necesario para
+     * registrar la asistencia al servidor Web.
+    */
     private void sendInfo(){
 
         try {
@@ -110,6 +118,11 @@ public class Servicio extends IntentService{
         }
     }
 
+    /**
+     * Metodo encargado de generar la notificacion del registro de asistencia
+     * y ponerla a disposicion de la plataforma para mostrarla.
+     * @param notificationDetails
+    */
     private void sendNotification(String notificationDetails) {
         // Create an explicit content Intent that starts the main Activity.
         Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);
@@ -149,5 +162,3 @@ public class Servicio extends IntentService{
     }
 
 }
-
-
