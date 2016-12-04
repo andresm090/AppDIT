@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Materias">
+
+        <CheckBoxPreference
+            android:key="Mesas de Exámenes Finales"
+            android:title="Mesas de Exámenes Finales"
+            android:summary=""
+            android:defaultValue="false"/>
+
+        <PreferenceScreen android:title="Primer Año">
+            <PreferenceCategory android:title="Primer Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Álgebra"
+                    android:title="Álgebra"
+                    android:summary="Prof. Diana Pastrian"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Elementos de Informática"
+                    android:title="Elementos de Informática"
+                    android:summary="Prof. Ricardo Lopez"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Expresion de Problemas y Algoritmos"
+                    android:title="Expresion de Problemas y Algoritmos"
+                    android:summary="Prof. Sonia Sounier"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Inglés"
+                    android:title="Inglés"
+                    android:summary="Prof. Desconocida"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+
+            <PreferenceCategory android:title="Segundo Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Análisis Matemático - S"
+                    android:title="Análisis Matemático - S"
+                    android:summary="Prof. Sonia Sounier"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Algoritmica y Programación I"
+                    android:title="Algoritmica y Programación I"
+                    android:summary="Prof. Sonia Sounier"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Elementos de Lógica y Mat. Discreta"
+                    android:title="Elementos de Lógica y Mat. Discreta"
+                    android:summary="Prof. Diana Pastrian"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+
+        </PreferenceScreen>
+
+        <PreferenceScreen android:title="Segundo Año">
+            <PreferenceCategory android:title="Primer Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Sistemas y Organizaciones"
+                    android:title="Sistemas y Organizaciones"
+                    android:summary="Prof. Desconocida"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Arquitectura de Computadoras"
+                    android:title="Arquitectura de Computadoras"
+                    android:summary="Prof. Alejandro Rosales"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Algoritmica y Programación II"
+                    android:title="Algoritmica y Programación II"
+                    android:summary="Prof. Marta"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+
+            <PreferenceCategory android:title="Segundo Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Base de Datos I"
+                    android:title="Base de Datos I"
+                    android:summary="Prof. Gabriel"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Estadistica"
+                    android:title="Estadistica"
+                    android:summary="Prof. Molina"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Programación Orientada a Objetos"
+                    android:title="Programación Orientada a Objetos"
+                    android:summary="Prof. Alejandro Biaggio"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Introducción a la Concurrencia"
+                    android:title="Introducción a la Concurrencia"
+                    android:summary="Prof. Marcelo Gomez"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+
+        <PreferenceScreen android:title="Tercer Año">
+            <PreferenceCategory android:title="Primer Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Laboratorio de Programación y Lenguajes"
+                    android:title="Laboratorio de Programación y Lenguajes"
+                    android:summary="Prof. Diego"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Sistemas Operativos - S"
+                    android:title="Sistemas Operativos - S"
+                    android:summary="Prof. Marta Dans"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Ingenieria de Software I - T"
+                    android:title="Ingenieria de Software I - T"
+                    android:summary="Prof. Marta"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+
+            <PreferenceCategory android:title="Segundo Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Desarrollo de Software"
+                    android:title="Desarrollo de Software"
+                    android:summary="Prof. Gloria"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Ingenieria de Software II - T"
+                    android:title="Ingenieria de Software II - T"
+                    android:summary="Prof. Marta"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Fundamentos Teóricos de Informática"
+                    android:title="Fundamentos Teóricos de Informática"
+                    android:summary="Prof. Gloria"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+
+        <PreferenceScreen android:title="Cuarto Año">
+            <PreferenceCategory android:title="Primer Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Redes y Transmisión de Datos"
+                    android:title="Redes y Transmisión de Datos"
+                    android:summary="Prof. Ricardo Lopez"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Base de Datos II"
+                    android:title="Base de Datos II"
+                    android:summary="Prof. Gabriel"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Paradigmas y Lenguajes de Programación - T"
+                    android:title="Paradigmas y Lenguajes de Programación - T"
+                    android:summary="Prof. Beatriz"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Introducción a la Metodología de la Investigación Científica y Técnicas Comunicacionales"
+                    android:title="Introducción a la Metodología de la Investigación Científica y Técnicas Comunicacionales"
+                    android:summary="Prof. Salvatierra Sergio"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+
+            <PreferenceCategory android:title="Segundo Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Administración de Redes y Seguridad"
+                    android:title="Administración de Redes y Seguridad"
+                    android:summary="Prof. Alejandro"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Ingenieria de Software III - T"
+                    android:title="Ingenieria de Software III - T"
+                    android:summary="Prof. Gloria"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Aspectos Legales y Profesionales"
+                    android:title="Aspectos Legales y Profesionales"
+                    android:summary="Prof. Guillermo"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Sistemas Distribuidos"
+                    android:title="Sistemas Distribuidos"
+                    android:summary="Prof. Ricardo Lopez"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+
+        <PreferenceScreen android:title="Quinto Año">
+            <PreferenceCategory android:title="Primer Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Administracion de Proyectos"
+                    android:title="Administración de Proyectos"
+                    android:summary="Prof. Marta"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Aplicaciones Web"
+                    android:title="Aplicaciones Web"
+                    android:summary="Prof. Diego Martinez"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Taller de Nuevas Tecnologias"
+                    android:title="Taller de Nuevas Tecnologias"
+                    android:summary="Prof. Diego"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Modelos y Simulación"
+                    android:title="Modelos y Simulación"
+                    android:summary="Prof. Claudia"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+
+            <PreferenceCategory android:title="Segundo Cuatrimestre">
+                <CheckBoxPreference
+                    android:key="Planificación y Gestión de Sistemas de Información"
+                    android:title="Planificación y Gestión de Sistemas de Información"
+                    android:summary="Prof. Desconocido"
+                    android:defaultValue="false"/>
+                <CheckBoxPreference
+                    android:key="Sistemas de Soporte para la Toma de Decisiones"
+                    android:title="Sistemas de Soporte para la Toma de Decisiones"
+                    android:summary="Prof. Claudia"
+                    android:defaultValue="false"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
