@@ -41,11 +41,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private PendingIntent mGeofenceRequestIntent;
 
+
+    // Permisos necesarios para el servicio de Geofencing y las llamadas
     final int REQUEST_PERMISSION_GEO = 101;
     final int REQUEST_PERMISSION_CALL_PHONE = 1;
     final String permissionstr = Manifest.permission.ACCESS_FINE_LOCATION;
     final String callpermision = Manifest.permission.CALL_PHONE;
 
+    /**
+     * Metodo onCreate()
+     * @param savedInstanceState
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -189,34 +195,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+
+    /**
+     * Metodo onStart()
+    */
     @Override
     protected void onStart() {
         super.onStart();
     }
 
+    /**
+     * Metodo onStop()
+    */
     @Override
     protected void onStop() {
         super.onStop();
-
-        //if (mGoogleApiClient != null){
-          //  if (mGoogleApiClient.isConnected()) {
-            //    mGoogleApiClient.disconnect();
-            //}
-        //}
     }
 
-
+    /**
+     * Metodo onConnectionSuspended()
+     * @param cause
+    */
     @Override
     public void onConnectionSuspended(int cause) {
         Log.i("Main", "Connection suspended");
         mGoogleApiClient.connect();
     }
 
+    /**
+     * Metodo onConnectionFailed()
+     * @param result
+    */
     @Override
     public void onConnectionFailed(ConnectionResult result) {
         Log.i("Main", "Connection failed: ConnectionResult.getErrorCode() = " + result.getErrorCode());
     }
 
+    /**
+     * Metodo que determina si los permisos son los adecuados, y en caso de showPermissionDialog
+     * inicia el Servicio de Geofencing
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+    */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         //super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -230,6 +251,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    /**
+    *  Método que se encarga de la construccion del objeto
+    *  responsable de la conexion con las API Google
+    */
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -238,6 +263,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .build();
     }
 
+    /**
+    *  Método que se encarga de establecer el Servicio de Geofencing
+    */
     private GeofencingRequest getGeofencingRequest() {
         GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
         builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
@@ -246,11 +274,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return builder.build();
     }
 
+    /**
+    *  Método que se encarga de establecer establecer el Servicio que se
+    *  ocupará del tratamiento de los eventos de geofencing
+    */
     private PendingIntent getGeofencePendingIntent() {
         Intent intent = new Intent(this, Servicio.class);
         return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
+    /**
+     * Metodo onCreate()
+     * @param bundle
+    */
     @Override
     public void onConnected(Bundle bundle) {
 
@@ -275,6 +311,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    /**
+     * Metodo onResult()
+     * @param result
+    */
     @Override
     public void onResult(Result result) {
         Log.e("Main",result.toString());
@@ -282,6 +322,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    /**
+    *  Método que se encarga de establecer los distintos puntos de interes
+    *  a examinar
+    */
     public void populateGeofenceList() {
         mGeofenceList.add(new Geofence.Builder()
                 //Identifica CASA LEANDRO
