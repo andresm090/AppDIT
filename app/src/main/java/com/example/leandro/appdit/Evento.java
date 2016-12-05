@@ -133,7 +133,7 @@ public class Evento implements Comparable<Evento>{
      * Metodo que retorna las iniciales de la materia al que pertenece el Objeto Evento.
      * @return String que representa las iniciales de la materia al que pertenece el evento.
      * {@link #getMateria()}
-     * @see {@link Materia#getIniciales(String)}
+     * @see Materia#getIniciales(String)
      */
     public String getInicial(){return Materia.getIniciales(this.getMateria());}
 
@@ -141,7 +141,7 @@ public class Evento implements Comparable<Evento>{
      * Metodo que retorna el color con el que se visualizara la materia al que pertenece el Objeto Evento.
      * @return int que representa el color con el que se visualizara la materia al que pertenece el evento.
      * {@link #getMateria()}
-     * @see {@link Materia#getColor(String)}
+     * @see Materia#getColor(String)
      */
     public int getColor() {return  Materia.getColor(this.getMateria());}
 
@@ -192,7 +192,7 @@ public class Evento implements Comparable<Evento>{
      * @return TextDrawable que representa el icono de la materia a la que pertenece el evento.
      * {@link #getInicial()}
      * {@link #getColor()}
-     * @see {@link TextDrawable}
+     * @see TextDrawable
      */
     public TextDrawable getIcono() {
         return TextDrawable.builder().beginConfig().withBorder(6).endConfig().buildRoundRect(this.getInicial(), this.getColor(),10);

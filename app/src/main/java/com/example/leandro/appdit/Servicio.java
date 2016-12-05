@@ -42,10 +42,10 @@ public class Servicio extends IntentService{
     /**
      * Metodo encargado del manejo de los eventos de Geofencing
      * @param intent Objeto Intent inicializador del servicio.
-     * @see {@link GeofencingEvent}
-     * @see {@link GeofencingEvent#fromIntent(Intent)}
-     * @see {@link Geofence}
-     * @see {@link Log}
+     * @see GeofencingEvent
+     * @see GeofencingEvent#fromIntent(Intent)
+     * @see Geofence
+     * @see Log
      */
     @Override
     protected void onHandleIntent(Intent intent) {
@@ -78,9 +78,9 @@ public class Servicio extends IntentService{
     /**
      * Metodo encargado de enviar la información necesaria para
      * registrar la asistencia al servidor Web.
-     * @see {@link URL}
-     * @see {@link JSONObject}
-     * @see {@link Log}
+     * @see URL
+     * @see JSONObject
+     * @see Log
      */
     private void sendInfo(){
         try {

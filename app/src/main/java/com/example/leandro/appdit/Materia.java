@@ -77,7 +77,7 @@ public class Materia {
      * del usuario.
      * @param pref SharedPreferences coleccion con las preferencias del usuario.
      * @return HashMap con las materias y sus correspondientes calendarios de acuerdo a las preferencias.
-     * @see {@link Preferencia#getCalendario()}
+     * @see Preferencia#getCalendario()
      */
     public static Map<String, String> armarPreferencias(SharedPreferences pref){
         inicializar();
@@ -112,7 +112,7 @@ public class Materia {
      * Metodo que dada una materia, retorna su codigo de identificacion de acuerdo al plan.
      * @param materia String que representa el nombre de la materia.
      * @return String que representa el codigo de la materia pasada como parametro.
-     * @see {@link Preferencia#getCodMateria()}
+     * @see Preferencia#getCodMateria()
      */
     @Nullable
     public static String getCodigoMateria(String materia){
@@ -128,7 +128,7 @@ public class Materia {
      * Metodo que retorna el color con el que se mostrara la materia.
      * @param materia String que representa el nombre de la materia.
      * @return int que representa el color que tendra la materia cuando se muestre al usuario.
-     * @see {@link Preferencia#getColor()}
+     * @see Preferencia#getColor()
      */
     public static int getColor(String materia){
         return materiasPreferencias.get(materia).getColor();
@@ -138,7 +138,7 @@ public class Materia {
      * Metodo que retorna las iniciales de la materia.
      * @param materia String que representa el nombre de la materia.
      * @return String que representa las iniciales de la materia.
-     * @see {@link Preferencia#getInicial()}
+     * @see Preferencia#getInicial()
      */
     public static String getIniciales(String materia){
         return materiasPreferencias.get(materia).getInicial();
