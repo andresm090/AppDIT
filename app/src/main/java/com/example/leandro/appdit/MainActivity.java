@@ -268,8 +268,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     */
     private GeofencingRequest getGeofencingRequest() {
         GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
-        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
-        //builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_DWELL);
+        //builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
+        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_DWELL);
         builder.addGeofences(mGeofenceList);
         return builder.build();
     }
@@ -327,30 +327,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     *  a examinar
     */
     public void populateGeofenceList() {
-        mGeofenceList.add(new Geofence.Builder()
-                //Identifica CASA LEANDRO
-                .setRequestId("1")
-                .setCircularRegion(-43.275458, -65.309690,100) //coords de casa
-                .setExpirationDuration(Geofence.NEVER_EXPIRE)
-                .setLoiteringDelay(150000)
-                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT | Geofence.GEOFENCE_TRANSITION_DWELL)
-                .build());
 
         mGeofenceList.add(new Geofence.Builder()
                 //Identifica el DIT
-                .setRequestId("2")
+                .setRequestId("1")
                 .setCircularRegion(-43.257369, -65.307699, 100)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
-                .setLoiteringDelay(150000)
+                .setLoiteringDelay(150000) //2.5 minutos
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT | Geofence.GEOFENCE_TRANSITION_DWELL)
                 .build());
 
         mGeofenceList.add(new Geofence.Builder()
                 //Identifica el edificio de aulas
-                .setRequestId("3")
+                .setRequestId("2")
                 .setCircularRegion(-43.250092, -65.308152, 100)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
-                .setLoiteringDelay(150000)
+                .setLoiteringDelay(150000) //2.5 minutos
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT | Geofence.GEOFENCE_TRANSITION_DWELL)
                 .build());
 
