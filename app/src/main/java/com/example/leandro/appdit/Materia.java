@@ -74,9 +74,10 @@ public class Materia {
 
     /**
      * Metodo estatico que arma un HashMap con las materias y sus correspondientes calendarios de acuerdo a las preferencias
-     * del usuario
+     * del usuario.
      * @param pref SharedPreferences coleccion con las preferencias del usuario.
-     * @return HashMap con las materias y sus correspondientes calendarios de acuerdo a las preferencias
+     * @return HashMap con las materias y sus correspondientes calendarios de acuerdo a las preferencias.
+     * @see {@link Preferencia#getCalendario()}
      */
     public static Map<String, String> armarPreferencias(SharedPreferences pref){
         inicializar();
@@ -93,9 +94,9 @@ public class Materia {
     }
 
     /**
-     * Metodo estatico que arma un listado con las materias de preferencias del usuario
+     * Metodo estatico que arma un listado con las materias de preferencias del usuario.
      * @param pref SharedPreferences coleccion con las preferencias del usuario.
-     * @return ArrayList de String que representa el listado de preferencias del usuario
+     * @return ArrayList de String que representa el listado de preferencias del usuario.
      */
     public static ArrayList<String> getPreferencias(SharedPreferences pref){
         ArrayList<String> preferencias = new ArrayList<String>();
@@ -108,9 +109,10 @@ public class Materia {
     }
 
     /**
-     * Metodo que dada una materia, retorna su codigo de identificacion de acuerdo al plan
+     * Metodo que dada una materia, retorna su codigo de identificacion de acuerdo al plan.
      * @param materia String que representa el nombre de la materia.
      * @return String que representa el codigo de la materia pasada como parametro.
+     * @see {@link Preferencia#getCodMateria()}
      */
     @Nullable
     public static String getCodigoMateria(String materia){
@@ -123,18 +125,20 @@ public class Materia {
     }
 
     /**
-     * Metodo que retorna el color con el que se mostrara la materia
-     * @param materia String que representa el nombre de la materia
-     * @return int que representa el color que tendra la materia cuando se muestre al usuario
+     * Metodo que retorna el color con el que se mostrara la materia.
+     * @param materia String que representa el nombre de la materia.
+     * @return int que representa el color que tendra la materia cuando se muestre al usuario.
+     * @see {@link Preferencia#getColor()}
      */
     public static int getColor(String materia){
         return materiasPreferencias.get(materia).getColor();
     }
 
     /**
-     * Metodo que retorna las iniciales de la materia
-     * @param materia String que representa el nombre de la materia
-     * @return String que representa las iniciales de la materia
+     * Metodo que retorna las iniciales de la materia.
+     * @param materia String que representa el nombre de la materia.
+     * @return String que representa las iniciales de la materia.
+     * @see {@link Preferencia#getInicial()}
      */
     public static String getIniciales(String materia){
         return materiasPreferencias.get(materia).getInicial();

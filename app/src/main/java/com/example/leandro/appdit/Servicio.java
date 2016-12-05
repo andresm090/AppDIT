@@ -32,16 +32,21 @@ public class Servicio extends IntentService{
     // Pasar a un archivo de configuración. Poner en R values
     static final String URL_CONN = "https://horariosv3-pazitos10.rhcloud.com/api/asistencia/";
 
-
+    /**
+     * Metodo Constructor
+     */
     public Servicio () {
         super(Servicio.class.getSimpleName());
     }
 
-
     /**
      * Metodo encargado del manejo de los eventos de Geofencing
-     * @param intent
-    */
+     * @param intent Objeto Intent inicializador del servicio.
+     * @see {@link GeofencingEvent}
+     * @see {@link GeofencingEvent#fromIntent(Intent)}
+     * @see {@link Geofence}
+     * @see {@link Log}
+     */
     @Override
     protected void onHandleIntent(Intent intent) {
 
@@ -71,11 +76,13 @@ public class Servicio extends IntentService{
     }
 
     /**
-     * Metodo encargado de enviar la información necesario para
+     * Metodo encargado de enviar la información necesaria para
      * registrar la asistencia al servidor Web.
-    */
+     * @see {@link URL}
+     * @see {@link JSONObject}
+     * @see {@link Log}
+     */
     private void sendInfo(){
-
         try {
 
             URL destino =  new URL(URL_CONN);
@@ -121,8 +128,8 @@ public class Servicio extends IntentService{
     /**
      * Metodo encargado de generar la notificacion del registro de asistencia
      * y ponerla a disposicion de la plataforma para mostrarla.
-     * @param notificationDetails
-    */
+     * @param notificationDetails String que representa los datos a mostrar por la notificacion.
+     */
     private void sendNotification(String notificationDetails) {
         // Create an explicit content Intent that starts the main Activity.
         Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);
@@ -162,3 +169,5 @@ public class Servicio extends IntentService{
     }
 
 }
+
+
